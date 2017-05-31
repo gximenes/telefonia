@@ -26,5 +26,12 @@
             <var>message</var>
         </resource-bundle>
     </application>
+    
+    <application>
+        <resource-bundle>
+            <base-name>/bundle/menu</base-name>
+            <var>menu</var>
+        </resource-bundle>
+    </application>
 
 </faces-config>

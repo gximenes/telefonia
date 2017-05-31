@@ -28,7 +28,7 @@
 
 
 	<welcome-file-list>
-		<welcome-file>paginas/login.xhtml</welcome-file>
+		<welcome-file>paginas/publico/index.xhtml</welcome-file>
 	</welcome-file-list>
 
 	<error-page>
