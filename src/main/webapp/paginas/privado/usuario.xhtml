@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets">
+
+<ui:decorate template="/paginas/template/layout.xhtml">
+	<ui:define name="content">
+		<div class="page-header">
+			<p:outputLabel value="#{label.usuario}" />
+		</div>
+
+		<div class="col-lg-4" style="width: 80%">
+			<div class="panel panel-primary">
+				<div class="panel-heading">
+					<h:outputText value="#{label.consultarUsuario}" />
+				</div>
+				<div class="panel-body">
+					<h:panelGrid columns="2" style="border: none">
+						<h:outputText value="#{label.nomeDescricao}:" />
+						<p:inputText style="margin-left: 15px" styleClass="form-control" />
+
+						<p:outputLabel value="" />
+						<p:outputLabel value="" style="margin-left: 15px" />
+
+
+						<h:outputText value="#{label.status}:" />
+						<select class="form-control" style="margin-left: 15px">
+							<option>1</option>
+							<option>2</option>
+							<option>3</option>
+							<option>4</option>
+							<option>5</option>
+						</select>
+
+						<h:outputText value="" />
+						<p:outputLabel value="" />
+
+
+						<h:outputText value="#{label.perfil}:" />
+						<select class="form-control" style="margin-left: 15px">
+							<option>1</option>
+							<option>2</option>
+							<option>3</option>
+							<option>4</option>
+							<option>5</option>
+						</select>
+
+					</h:panelGrid>
+				</div>
+				<div class="panel-footer">Panel Footer</div>
+			</div>
+		</div>
+
+
+	</ui:define>
+
+</ui:decorate>
+</html>
