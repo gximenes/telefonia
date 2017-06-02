@@ -18,7 +18,26 @@
 						class="icon-bar"></span>
 				</button>
 				<p:commandLink styleClass="navbar-brand" value="#{label.title}" />
+
 			</div>
+
+			<div class="navbar-header" style="margin-left: 80%; margin-top: 1%">
+				<a class="dropdown-toggle" data-toggle="dropdown" href="#"> <i
+					class="fa fa-user fa-fw"></i> <i class="fa fa-caret-down"></i>
+				</a>
+				<ul class="dropdown-menu dropdown-user" style="margin-left: 80%">
+					<li><a><p:commandLink value="#{menu.usuario}" 
+								style="margin-left:5px" styleClass="fa fa-user fa-fw" /></a></li>
+					<li><a href="#"> <p:commandLink value="Settings"
+								styleClass="fa fa-gear fa-fw" style="margin-left:5px" /></a></li>
+					<li class="divider"></li>
+					<li><a><p:commandLink value="#{menu.logout}"
+								styleClass="fa fa-sign-out fa-fw" style="margin-left:5px" /></a></li>
+				</ul>
+				<!-- /.dropdown-user -->
+			</div>
+
+
 		</div>
 
 	</ui:composition>
