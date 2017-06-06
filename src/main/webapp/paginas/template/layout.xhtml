@@ -15,24 +15,24 @@
 	<h:outputStylesheet library="bootstrap/css" name="sb-admin-2.css" />
 
 	<h:outputStylesheet library="bootstrap/css" name="font-awesome.min.css" />
-	
-	<h:outputStylesheet library="bootstrap/css" name="morris.cs" />
-	
-	<h:outputScript library="bootstrap/js"  name="jquery.min.js"/>
-	
-	<h:outputScript library="bootstrap/js" name="bootstrap.min.js"/>
-	
-	<h:outputScript library="bootstrap/js" name="metisMenu.min.js"/>
-	
-	<h:outputScript library="bootstrap/js" name="raphael.min.js"/>
-	
-	<h:outputScript library="bootstrap/js" name="morris.min.js"/>
-	
-	<h:outputScript library="bootstrap/js" name="morris-data.js"/>
-	
-	<h:outputScript library="bootstrap/js" name="sb-admin-2.js"/>
 
-	
+	<h:outputStylesheet library="bootstrap/css" name="morris.cs" />
+
+	<h:outputScript library="bootstrap/js" name="jquery.min.js" />
+
+	<h:outputScript library="bootstrap/js" name="bootstrap.min.js" />
+
+	<h:outputScript library="bootstrap/js" name="metisMenu.min.js" />
+
+	<h:outputScript library="bootstrap/js" name="raphael.min.js" />
+
+	<h:outputScript library="bootstrap/js" name="morris.min.js" />
+
+	<h:outputScript library="bootstrap/js" name="morris-data.js" />
+
+	<h:outputScript library="bootstrap/js" name="sb-admin-2.js" />
+
+
 </h:head>
 
 <h:body>
@@ -46,21 +46,21 @@
 
 	<div>
 		<ui:include src="/paginas/template/menu.xhtml"></ui:include>
-	
-		<div id="page-wrapper">
-            <div class="row">
-                <div class="col-lg-12">
-					<ui:insert name="content">
 
-					</ui:insert>
+		<h:form id="formConteudo">
+			<div id="page-wrapper">
+				<div class="row">
+					<div class="col-lg-12">
+						<ui:insert name="content">
+
+						</ui:insert>
+					</div>
+					<!-- /.col-lg-12 -->
 				</div>
-                <!-- /.col-lg-12 -->
-            </div>
-            
-            
-        </div>
 
-		
+			</div>
+		</h:form>
+
 
 	</div>
 </h:body>

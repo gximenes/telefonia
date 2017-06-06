@@ -54,7 +54,7 @@
 
 						<h:panelGrid columns="1" style="border: none;margin-left:95%">
 							<h:commandButton styleClass="btn btn-outline btn-primary btn-sm"
-								value="#{botao.consultar}"  action="" />
+								value="#{botao.consultar}" action="#{manterUsuarioManagedBean.consultar()}"   />
 
 							<h:outputLabel value=" " />
 
@@ -98,7 +98,12 @@
 										
 										<h:column>
 											<f:facet name="header"><h:outputText value="#{label.acao}" /></f:facet>
-											<h:outputLabel value=" sadsa" />
+											
+											<h:commandLink   >
+											    <h:graphicImage  styleClass="fa fa-times  btn-warning btn-circle" style="border:0px" />
+											</h:commandLink>
+											
+											<button type="button" class="btn btn-warning btn-circle"><i class="fa fa-times"></i></button>
 										</h:column>
 									</h:dataTable>
 
