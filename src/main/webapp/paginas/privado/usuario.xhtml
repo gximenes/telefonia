@@ -8,46 +8,166 @@
 <ui:decorate template="/paginas/template/layout.xhtml">
 	<ui:define name="content">
 		<div class="page-header">
-			<p:outputLabel value="#{label.usuario}" />
+			<h3>
+				<p:outputLabel value="#{label.usuario}" />
+			</h3>
 		</div>
 
-		<div class="col-lg-4" style="width: 80%">
+		<div class="col-lg-4" style="width: 100%">
 			<div class="panel panel-primary">
 				<div class="panel-heading">
 					<h:outputText value="#{label.consultarUsuario}" />
 				</div>
 				<div class="panel-body">
 					<h:panelGrid columns="2" style="border: none">
-						<h:outputText value="#{label.nomeDescricao}:" />
-						<p:inputText style="margin-left: 15px" styleClass="form-control" />
+						<h:panelGrid columns="2" style="border: none">
+							<h:outputText value="#{label.nomeDescricao}:" />
+							<p:inputText style="margin-left: 15px" styleClass="form-control" />
 
-						<p:outputLabel value="" />
-						<p:outputLabel value="" style="margin-left: 15px" />
-
-
-						<h:outputText value="#{label.status}:" />
-						<select class="form-control" style="margin-left: 15px">
-							<option>1</option>
-							<option>2</option>
-							<option>3</option>
-							<option>4</option>
-							<option>5</option>
-						</select>
-
-						<h:outputText value="" />
-						<p:outputLabel value="" />
+							<p:outputLabel value="" />
+							<p:outputLabel value="" style="margin-left: 15px" />
 
 
-						<h:outputText value="#{label.perfil}:" />
-						<select class="form-control" style="margin-left: 15px">
-							<option>1</option>
-							<option>2</option>
-							<option>3</option>
-							<option>4</option>
-							<option>5</option>
-						</select>
+							<h:outputText value="#{label.status}:" />
+							<select class="form-control" style="margin-left: 15px">
+								<option>1</option>
+								<option>2</option>
+								<option>3</option>
+								<option>4</option>
+								<option>5</option>
+							</select>
+
+							<h:outputText value="" />
+							<p:outputLabel value="" />
+
+
+							<h:outputText value="#{label.perfil}:" />
+							<select class="form-control" style="margin-left: 15px">
+								<option>1</option>
+								<option>2</option>
+								<option>3</option>
+								<option>4</option>
+								<option>5</option>
+							</select>
+
+						</h:panelGrid>
+
+						<h:panelGrid columns="1" style="border: none;margin-left:95%">
+							<h:commandButton styleClass="btn btn-outline btn-primary btn-sm"
+								value="#{botao.consultar}"  action="" />
+
+							<h:outputLabel value=" " />
+
+							<h:commandButton styleClass="btn btn-outline btn-primary btn-sm"
+								value="#{botao.limpar}" />
+						</h:panelGrid>
 
 					</h:panelGrid>
+
+					<div class="row" style="margin-top: 15px">
+						<div class="col-lg-12">
+							<div class="panel panel-default">
+
+								<div class="panel-body">
+
+									<h:dataTable
+										styleClass="table table-striped table-bordered table-hover"
+										columnClasses="center" rowClasses="odd gradeX,even gradeC"
+										value="#{manterUsuarioManagedBean.usuariosPesquisados}" var="_usuario"  >
+										
+										<h:column >
+											<f:facet name="header"><h:outputText value="#{label.nomeDescricao}" /></f:facet>
+											<h:outputLabel value="#{_usuario.nomeDescricao}" />
+										</h:column>
+		
+										<h:column>
+											<f:facet name="header"><h:outputText value="#{label.perfil}" /></f:facet>
+											<h:outputLabel value="#{_usuario.perfil}"  />
+										</h:column>
+
+										<h:column>
+											<f:facet name="header"><h:outputText value="#{label.status}" /></f:facet>
+											<h:outputLabel value="#{_usuario.status}"  />
+										</h:column>
+
+
+										<h:column>
+											<f:facet name="header"><h:outputText value="#{label.dataCriacao}" /></f:facet>
+											<h:outputLabel value="#{_usuario.dataCriacao}"  />
+										</h:column>
+										
+										<h:column>
+											<f:facet name="header"><h:outputText value="#{label.acao}" /></f:facet>
+											<h:outputLabel value=" sadsa" />
+										</h:column>
+									</h:dataTable>
+
+								</div>
+							</div>
+						</div>
+					</div>
+
+
+					<!--   <div class="row" style="margin-top: 15px">
+						<div class="col-lg-12">
+							<div class="panel panel-default">
+								
+								<div class="panel-body">
+									<table width="100%"
+										class="table table-striped table-bordered table-hover"
+										id="dataTables-example">
+										<thead>
+											<tr>
+												<th class="center">Nome e/ou Descrição</th>
+												<th class="center">Perfil</th>
+												<th class="center">Status</th>
+												<th class="center">Data Cadastro</th>
+												<th class="center">Ações</th>
+											</tr>
+										</thead>
+										<tbody>
+											<tr class="odd gradeX">
+												<td>Trident</td>
+												<td>Internet Explorer 4.0</td>
+												<td>Win 95+</td>
+												<td class="center">4</td>
+												<td class="center">X</td>
+											</tr>
+											<tr class="even gradeC">
+												<td>Trident</td>
+												<td>Internet Explorer 5.0</td>
+												<td>Win 95+</td>
+												<td class="center">5</td>
+												<td class="center">C</td>
+											</tr>
+											
+											
+										</tbody>
+									</table>
+									
+									<div class="well">
+										<h4>DataTables Usage Information</h4>
+										<p>
+											DataTables is a very flexible, advanced tables plugin for
+											jQuery. In SB Admin, we are using a specialized version of
+											DataTables built for Bootstrap 3. We have also customized the
+											table headings to use Font Awesome icons in place of images.
+											For complete documentation on DataTables, visit their website
+											at <a target="_blank" href="https://datatables.net/">https://datatables.net/</a>.
+										</p>
+										<a class="btn btn-default btn-lg btn-block" target="_blank"
+											href="https://datatables.net/">View DataTables
+											Documentation</a>
+									</div>
+								</div>
+								
+							</div>
+							
+						</div>
+						
+					</div>-->
+
+
 				</div>
 				<div class="panel-footer">Panel Footer</div>
 			</div>
