@@ -7,6 +7,7 @@ import javax.faces.bean.ManagedBean;
 import javax.faces.bean.ViewScoped;
 
 import br.com.dgr.bd.entidades.Usuario;
+import br.com.dgr.enuns.ElementoDeNavegacao;
 
 @ManagedBean
 @ViewScoped
@@ -15,9 +16,11 @@ public class ManterUsuarioManagedBean {
 	private List<Usuario> usuariosPesquisados;
 	private Usuario usuarioConsulta;
 	
-	public void init(){
+	public String init(){
 		setUsuarioConsulta(new Usuario());
 		setUsuariosPesquisados(new ArrayList<Usuario>());
+		
+		return ElementoDeNavegacao.MANTER_USUARIO.getLinkNavegacao();
 	}
 
 	public List<Usuario> getUsuariosPesquisados() {
