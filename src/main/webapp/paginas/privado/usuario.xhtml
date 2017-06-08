@@ -11,12 +11,21 @@
 			<h3>
 				<p:outputLabel value="#{label.usuario}" />
 			</h3>
+
+			<h:commandLink title="Incluir Usuário" styleClass="btn btn-success"
+				 style="margin-left:90%">
+				<i class="fa fa-plus-circle " />
+				<h:outputText value="Incluir" style="margin-left:5px"/>
+			</h:commandLink>
 		</div>
 
 		<div class="col-lg-4" style="width: 100%">
 			<div class="panel panel-primary">
 				<div class="panel-heading">
-					<h:outputText value="#{label.consultarUsuario}" />
+					<i class="fa fa-user" />
+					<h:outputText value="#{label.consultarUsuario}"
+						style="margin-left:3%" />
+
 				</div>
 				<div class="panel-body">
 					<h:panelGrid columns="2" style="border: none">
@@ -54,7 +63,8 @@
 
 						<h:panelGrid columns="1" style="border: none;margin-left:95%">
 							<h:commandButton styleClass="btn btn-outline btn-primary btn-sm"
-								value="#{botao.consultar}" action="#{manterUsuarioManagedBean.consultar()}"   />
+								value="#{botao.consultar}"
+								action="#{manterUsuarioManagedBean.consultar()}" />
 
 							<h:outputLabel value=" " />
 
@@ -73,37 +83,58 @@
 									<h:dataTable
 										styleClass="table table-striped table-bordered table-hover"
 										columnClasses="center" rowClasses="odd gradeX,even gradeC"
-										value="#{manterUsuarioManagedBean.usuariosPesquisados}" var="_usuario"  >
-										
-										<h:column >
-											<f:facet name="header"><h:outputText value="#{label.nomeDescricao}" /></f:facet>
+										value="#{manterUsuarioManagedBean.usuariosPesquisados}"
+										var="_usuario">
+
+										<h:column>
+											<f:facet name="header">
+												<h:outputText value="#{label.nomeDescricao}" />
+											</f:facet>
 											<h:outputLabel value="#{_usuario.nomeDescricao}" />
 										</h:column>
-		
+
 										<h:column>
-											<f:facet name="header"><h:outputText value="#{label.perfil}" /></f:facet>
-											<h:outputLabel value="#{_usuario.perfil}"  />
+											<f:facet name="header">
+												<h:outputText value="#{label.perfil}" />
+											</f:facet>
+											<h:outputLabel value="#{_usuario.perfil}" />
 										</h:column>
 
 										<h:column>
-											<f:facet name="header"><h:outputText value="#{label.status}" /></f:facet>
-											<h:outputLabel value="#{_usuario.status}"  />
+											<f:facet name="header">
+												<h:outputText value="#{label.status}" />
+											</f:facet>
+											<h:outputLabel value="#{_usuario.status}" />
 										</h:column>
 
 
 										<h:column>
-											<f:facet name="header"><h:outputText value="#{label.dataCriacao}" /></f:facet>
-											<h:outputLabel value="#{_usuario.dataCriacao}"  />
+											<f:facet name="header">
+												<h:outputText value="#{label.dataCriacao}" />
+											</f:facet>
+											<h:outputLabel value="#{_usuario.dataCriacao}" />
 										</h:column>
-										
+
 										<h:column>
-											<f:facet name="header"><h:outputText value="#{label.acao}" /></f:facet>
-											
-											<h:commandLink   >
-											    <h:graphicImage  styleClass="fa fa-times  btn-warning btn-circle" style="border:0px" />
+											<f:facet name="header">
+												<h:outputText value="#{label.acao}" />
+											</f:facet>
+
+											<h:commandLink id="idExcluir"
+												styleClass=" btn btn-warning btn-circle"
+												style="margin-left:5%" title="Excluir Usuário">
+												<i class="fa fa-trash-o  "></i>
 											</h:commandLink>
-											
-											<button type="button" class="btn btn-warning btn-circle"><i class="fa fa-times"></i></button>
+
+
+											<h:commandLink id="idAtualizar"
+												styleClass="btn btn-info btn-circle" style="margin-left:7%"
+												title="Atualizar Usuário">
+												<i class="fa fa-refresh"></i>
+											</h:commandLink>
+
+
+
 										</h:column>
 									</h:dataTable>
 
