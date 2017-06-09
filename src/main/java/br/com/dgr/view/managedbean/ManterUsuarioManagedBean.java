@@ -19,7 +19,7 @@ public class ManterUsuarioManagedBean {
 	private List<Usuario> usuariosPesquisados;
 	private Usuario usuarioConsulta;
 	
-	@PostConstruct
+	
 	public String getInit(){
 		setUsuarioConsulta(new Usuario());
 		setUsuariosPesquisados(new ArrayList<Usuario>());
