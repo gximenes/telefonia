@@ -30,11 +30,20 @@
 				<div class="panel-body">
 					<h:panelGrid columns="2" style="border: none">
 						<h:panelGrid columns="2" style="border: none">
-							<h:outputText value="#{label.nomeDescricao}:" />
-							<p:inputText style="margin-left: 15px" styleClass="form-control" />
+							<h:outputText value="#{label.nome}:" />
+							<h:inputText style="margin-left: 15px" styleClass="form-control" />
 
-							<p:outputLabel value="" />
-							<p:outputLabel value="" style="margin-left: 15px" />
+							<h:inputSecret/>
+							<h:inputSecret value="#{pro}"/>
+							
+							<h:outputText value="#{label.perfil}:" />
+							<select class="form-control" style="margin-left: 15px">
+								<option>1</option>
+								<option>2</option>
+								<option>3</option>
+								<option>4</option>
+								<option>5</option>
+							</select>
 
 
 							<h:outputText value="#{label.status}:" />
@@ -46,18 +55,11 @@
 								<option>5</option>
 							</select>
 
-							<h:outputText value="" />
-							<p:outputLabel value="" />
+							<h:inputSecret/>
+							<h:inputSecret/>
 
-
-							<h:outputText value="#{label.perfil}:" />
-							<select class="form-control" style="margin-left: 15px">
-								<option>1</option>
-								<option>2</option>
-								<option>3</option>
-								<option>4</option>
-								<option>5</option>
-							</select>
+							<h:outputLabel value="Cpf" />
+							<h:inputText styleClass="form-control"  />
 
 						</h:panelGrid>
 
