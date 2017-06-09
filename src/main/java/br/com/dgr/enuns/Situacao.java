@@ -3,10 +3,8 @@ package br.com.dgr.enuns;
 public enum Situacao {
 	
 	ATIVO("A", "Ativo"),
-	INATIVO("I", "Inativo"),
-	TESTE("t","t");
-	
-	
+	INATIVO("I", "Inativo");
+		
 	private String valor;
 	private String descricao;
 
