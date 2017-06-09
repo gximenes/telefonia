@@ -1,4 +1,4 @@
-package br.com.drg.servicos.interfaces;
+package br.com.dgr.servicos.interfaces;
 
 public interface UsuarioService {
 
