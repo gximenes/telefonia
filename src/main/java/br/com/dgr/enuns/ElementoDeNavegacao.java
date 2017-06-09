@@ -2,14 +2,17 @@ package br.com.dgr.enuns;
 
 public enum ElementoDeNavegacao {
 	
-	MANTER_USUARIO("Manter Usuário", "/paginas/privado/usuario.xhtml");
+	MANTER_USUARIO("Manter Usuário", "/paginas/privado/usuario/consultarUsuario.xhtml",null),
+		INCLUIR_USUARIO("Manter Usuário", "/paginas/privado/usuario/incluirUsuario.xhtml", MANTER_USUARIO);
 	
 	private String valor;
 	private String linkNavegacao;
+	private ElementoDeNavegacao dependenciaSuperior;
 
-	private ElementoDeNavegacao(String valor, String link) {
+	private ElementoDeNavegacao(String valor, String link, ElementoDeNavegacao dependenciaSuperior) {
 		this.valor = valor;
 		this.linkNavegacao = link;
+		this.dependenciaSuperior = dependenciaSuperior;
 	}
 	
 	public String getLinkNavegacao() {
@@ -25,4 +28,7 @@ public enum ElementoDeNavegacao {
 	    }
 	    return "";
    }
+
+
+   
 }

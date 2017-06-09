@@ -12,7 +12,7 @@
 				<p:outputLabel value="#{label.usuario}" />
 			</h3>
 
-			<h:commandLink title="Incluir Usuário" styleClass="btn btn-success"
+			<h:commandLink title="Incluir Usuário" styleClass="btn btn-success" 
 				 style="margin-left:90%">
 				<i class="fa fa-plus-circle " />
 				<h:outputText value="Incluir" style="margin-left:5px"/>
@@ -33,27 +33,39 @@
 							<h:outputText value="#{label.nome}:" />
 							<h:inputText style="margin-left: 15px" styleClass="form-control" />
 
-							<h:inputSecret/>
-							<h:inputSecret value="#{pro}"/>
+							<h:outputLabel value=" "/>
+							<h:outputLabel value=" "/>
 							
 							<h:outputText value="#{label.perfil}:" />
 							<h:selectOneMenu styleClass="form-control" style="margin-left: 15px">
+							   <f:selectItem noSelectionOption="true" itemValue="#{null}" itemLabel="#{label.selecione}" />
 							   <f:selectItems var="_item" value="#{produtorDeLista.listaTipoPerfilSelectItem}"  />
 							</h:selectOneMenu>
 							
+							<h:outputLabel value=" "/>
+							<h:outputLabel value=" "/>
+							
 							<h:outputText value="#{label.status}:" />
 							<h:selectOneMenu styleClass="form-control" style="margin-left: 15px">
+								<f:selectItem noSelectionOption="true" itemValue="#{null}" itemLabel="#{label.selecione}" />
 							   <f:selectItems var="_item" value="#{produtorDeLista.listaSituacaoSelectItem}"  />
 							</h:selectOneMenu>
 
-							<h:inputSecret/>
-							<h:inputSecret/>
-							
+							<h:outputLabel value=" " />
+							<h:outputLabel value=" " />
+
 							<h:outputText value="#{label.tipoPessoa}:" />
-							<h:selectOneMenu styleClass="form-control" style="margin-left: 15px">
-							   <f:selectItems var="_item" value="#{produtorDeLista.listaSituacaoSelectItem}"  />
+							<h:selectOneMenu styleClass="form-control"
+								style="margin-left: 15px">
+								<f:selectItem noSelectionOption="true" itemValue="#{null}"
+									itemLabel="#{label.selecione}" />
+								<f:selectItems var="_item"
+									value="#{produtorDeLista.listaTipoPessoaSelectItem}" />
 							</h:selectOneMenu>
 
+							<h:outputLabel value=" "/>
+							<h:outputLabel value=" "/>
+							
 							<h:outputLabel value="Cpf" />
 							<h:inputText styleClass="form-control"  />
 
@@ -86,7 +98,7 @@
 
 										<h:column>
 											<f:facet name="header">
-												<h:outputText value="#{label.nomeDescricao}" />
+												<h:outputText value="#{label.nome}" />
 											</f:facet>
 											<h:outputLabel value="#{_usuario.nomeDescricao}" />
 										</h:column>

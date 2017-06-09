@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets">
+
+<ui:decorate template="/paginas/template/layout.xhtml">
+	<ui:define name="content">
+		<div class="page-header">
+			<h3>
+				<p:outputLabel value="#{label.usuario}" />
+			</h3>
+
+			<h:commandLink title="Incluir Usuário" styleClass="btn btn-success"
+				style="margin-left:90%">
+				<i class="fa fa-plus-circle " />
+				<h:outputText value="Incluir" style="margin-left:5px" />
+			</h:commandLink>
+		</div>
+
+		<div class="col-lg-4" style="width: 100%">
+			<div class="panel panel-primary">
+				<div class="panel-heading">
+					<i class="fa fa-user" />
+					<h:outputText value="#{label.consultarUsuario}"
+						style="margin-left:3%" />
+
+				</div>
+				<div class="panel-body">
+					<h:panelGrid columns="2" style="border: none">
+						<h:panelGrid columns="2" style="border: none">
+							<h:outputText value="#{label.nome}:" />
+							<h:inputText style="margin-left: 15px" styleClass="form-control" />
+
+							<h:outputLabel value=" " />
+							<h:outputLabel value=" " />
+
+							<h:outputText value="#{label.perfil}:" />
+							<h:selectOneMenu styleClass="form-control"
+								style="margin-left: 15px">
+								<f:selectItem noSelectionOption="true" itemValue="#{null}"
+									itemLabel="#{label.selecione}" />
+								<f:selectItems var="_item"
+									value="#{produtorDeLista.listaTipoPerfilSelectItem}" />
+							</h:selectOneMenu>
+
+							<h:outputLabel value=" " />
+							<h:outputLabel value=" " />
+
+							<h:outputText value="#{label.status}:" />
+							<h:selectOneMenu styleClass="form-control"
+								style="margin-left: 15px">
+								<f:selectItem noSelectionOption="true" itemValue="#{null}"
+									itemLabel="#{label.selecione}" />
+								<f:selectItems var="_item"
+									value="#{produtorDeLista.listaSituacaoSelectItem}" />
+							</h:selectOneMenu>
+
+							<h:outputLabel value=" " />
+							<h:outputLabel value=" " />
+
+							<h:outputText value="#{label.tipoPessoa}:" />
+							<h:selectOneMenu styleClass="form-control"
+								style="margin-left: 15px">
+								<f:selectItem noSelectionOption="true" itemValue="#{null}"
+									itemLabel="#{label.selecione}" />
+								<f:selectItems var="_item"
+									value="#{produtorDeLista.listaTipoPessoaSelectItem}" />
+							</h:selectOneMenu>
+
+							<h:outputLabel value=" " />
+							<h:outputLabel value=" " />
+
+							<h:outputLabel value="Cpf" />
+							<h:inputText styleClass="form-control" />
+
+						</h:panelGrid>
+
+						<h:panelGrid columns="1" style="border: none;margin-left:95%">
+							<h:commandButton styleClass="btn btn-outline btn-primary btn-sm"
+								value="#{botao.consultar}"
+								action="#{manterUsuarioManagedBean.consultar()}" />
+
+							<h:outputLabel value=" " />
+
+							<h:commandButton styleClass="btn btn-outline btn-primary btn-sm"
+								value="#{botao.limpar}" />
+						</h:panelGrid>
+
+					</h:panelGrid>
+				</div>
+				<div class="panel-footer">Panel Footer</div>
+			</div>
+		</div>
+
+
+	</ui:define>
+
+</ui:decorate>
+</html>
