@@ -37,26 +37,22 @@
 							<h:inputSecret value="#{pro}"/>
 							
 							<h:outputText value="#{label.perfil}:" />
-							<select class="form-control" style="margin-left: 15px">
-								<option>1</option>
-								<option>2</option>
-								<option>3</option>
-								<option>4</option>
-								<option>5</option>
-							</select>
-
-
+							<h:selectOneMenu styleClass="form-control" style="margin-left: 15px">
+							   <f:selectItems var="_item" value="#{produtorDeLista.listaTipoPerfilSelectItem}"  />
+							</h:selectOneMenu>
+							
 							<h:outputText value="#{label.status}:" />
-							<select class="form-control" style="margin-left: 15px">
-								<option>1</option>
-								<option>2</option>
-								<option>3</option>
-								<option>4</option>
-								<option>5</option>
-							</select>
+							<h:selectOneMenu styleClass="form-control" style="margin-left: 15px">
+							   <f:selectItems var="_item" value="#{produtorDeLista.listaSituacaoSelectItem}"  />
+							</h:selectOneMenu>
 
 							<h:inputSecret/>
 							<h:inputSecret/>
+							
+							<h:outputText value="#{label.tipoPessoa}:" />
+							<h:selectOneMenu styleClass="form-control" style="margin-left: 15px">
+							   <f:selectItems var="_item" value="#{produtorDeLista.listaSituacaoSelectItem}"  />
+							</h:selectOneMenu>
 
 							<h:outputLabel value="Cpf" />
 							<h:inputText styleClass="form-control"  />

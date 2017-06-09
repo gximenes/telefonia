@@ -30,6 +30,15 @@ public class ProdutorDeLista {
 		}
 		return itens;
 	}
+	
+	
+	public List<SelectItem> getListaTipoPerfilSelectItem(){
+		List<SelectItem> itens = new ArrayList<SelectItem>();
+		for(TipoPessoa st :TipoPessoa.values()){
+			itens.add(new SelectItem(st.getValor(),st.getDescricao()));
+		}
+		return itens;
+	}
 
 
 }
