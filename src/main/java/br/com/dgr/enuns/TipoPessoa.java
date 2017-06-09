@@ -1,6 +1,6 @@
 package br.com.dgr.enuns;
 
-public enum TipoPessoa { 
+public enum TipoPessoa {   
 	
 	FISICA("F", "Física"),
 	JURIDICA("J", "Jurídica");
