@@ -5,11 +5,18 @@ import java.util.Date;
 
 public class Usuario implements Serializable {
 
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+
 	private Long id;
 
 	private String  nomeDescricao;
 
 	private String status;
+	
+	private String tipoPessoa;
 
 	private Date dataCriacao;
 
@@ -61,6 +68,16 @@ public class Usuario implements Serializable {
 
 	public void setId(Long id) {
 		this.id = id;
+	}
+
+	
+	public String getTipoPessoa() {
+		return tipoPessoa;
+	}
+
+
+	public void setTipoPessoa(String tipoPessoa) {
+		this.tipoPessoa = tipoPessoa;
 	}
 
 

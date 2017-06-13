@@ -4,10 +4,8 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
-import javax.annotation.PostConstruct;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.SessionScoped;
-import javax.faces.bean.ViewScoped;
 
 import br.com.dgr.bd.entidades.Usuario;
 import br.com.dgr.enuns.ElementoDeNavegacao;
@@ -17,11 +15,11 @@ import br.com.dgr.enuns.ElementoDeNavegacao;
 public class ManterUsuarioManagedBean {
     
 	private List<Usuario> usuariosPesquisados;
-	private Usuario usuarioConsulta;
+	private Usuario user;
 	
 	
 	public String getInit(){
-		setUsuarioConsulta(new Usuario());
+		setUser(new Usuario());
 		setUsuariosPesquisados(new ArrayList<Usuario>());
 		
 		return ElementoDeNavegacao.MANTER_USUARIO.getLinkNavegacao();
@@ -42,14 +40,15 @@ public class ManterUsuarioManagedBean {
 		this.usuariosPesquisados = usuariosPesquisados;
 	}
 
-	public Usuario getUsuarioConsulta() {
-		return usuarioConsulta;
+	
+	public Usuario getUser() {
+		return user;
 	}
 
-	public void setUsuarioConsulta(Usuario usuarioConsulta) {
-		this.usuarioConsulta = usuarioConsulta;
+	public void setUser(Usuario user) {
+		this.user = user;
 	}
-	
+
 	//*********MOCK
 	private List<Usuario> users(){
 		List<Usuario> users = new ArrayList<Usuario>();

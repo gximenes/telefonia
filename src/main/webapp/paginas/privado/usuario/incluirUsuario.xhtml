@@ -19,7 +19,7 @@
 				<div class="panel-heading">
 					<i class="fa fa-user" />
 					<h:outputText value="#{label.incluirUsuario}"
-						style="margin-left:3%" />
+						style="margin-left:1%" />
 
 				</div>
 				<div class="panel-body">
@@ -42,19 +42,27 @@
 								<div class="tab-pane fade in active" id="home-pills">
 									<table style="width: 100%; margin-left: 20px;margin-top: 30px" >
 										<tr valign="top">
-											<td valign="middle" width="30%"><h:graphicImage
-													library="bootstrap/images" name="user.png" width="100"
-													height="100" /> <h:commandLink
-													title="#{label.incluirUsuario}"
-													styleClass="btn btn-success">
-													<i class="fa fa-plus-circle " />
-													<h:outputText value="Incluir" style="margin-left:5px" />
-												</h:commandLink></td>
+											<td valign="middle" width="30%" align="center">
+											 
+												<h:panelGrid
+													columns="1"  width="60%">
+													<center>
+
+														<h:outputLabel value="Foto de Perfil" style="margin-left:15%"/>
+														<h:graphicImage library="bootstrap/images" name="user.png"
+															width="100" height="100" style="margin-left:15%" />
+
+														<p:fileUpload value="#{fileUploadView.file}" mode="simple"
+															skinSimple="true" label="Selecionar Foto"
+															uploadLabel="Trocar Foto" style="margin-top:15px" />
+													</center>
+												</h:panelGrid>
+												</td>
 											<td valign="top" width="70%"><h:panelGrid columns="2"
 													cellspacing="10" style="margin-left:2%;width:80%">
 													<h:outputText value="#{label.nome}:" />
 													<h:inputText style="margin-left: 5px;width:100%" 
-														styleClass="form-control" />
+														styleClass="form-control" value="#{manterUsuarioManagedBean.user.nomeDescricao}" />
 
 													<h:outputLabel value=" " />
 													<h:outputLabel value=" " />
@@ -73,7 +81,7 @@
 
 													<h:outputText value="#{label.status}:" />
 													<h:selectOneMenu styleClass="form-control"
-														style="margin-left: 5px">
+														style="margin-left: 5px" value="#{manterUsuarioManagedBean.user.status}">
 														<f:selectItem noSelectionOption="true" itemValue="#{null}"
 															itemLabel="#{label.selecione}" />
 														<f:selectItems var="_item"
@@ -85,7 +93,7 @@
 
 													<h:outputText value="#{label.tipoPessoa}:" />
 													<h:selectOneMenu styleClass="form-control"
-														style="margin-left: 5px">
+														style="margin-left: 5px" value="#{manterUsuarioManagedBean.user.tipoPessoa}">
 														<f:selectItem noSelectionOption="true" itemValue="#{null}"
 															itemLabel="#{label.selecione}" />
 														<f:selectItems var="_item"
@@ -97,6 +105,16 @@
 												</h:panelGrid></td>
 										</tr>
 									</table>
+									<div class="panel-footer" style="margin-top:40px">
+										<center>
+											<h:commandLink styleClass="btn btn-outline btn-primary"
+												style="width:30%;margin-top:10px">
+												<h:outputLabel value="Próximo" />
+												<i class="fa fa-arrow-right"></i>
+											</h:commandLink>
+										</center>
+
+									</div>
 								</div>
 								<div class="tab-pane fade" id="profile-pills">
 									<h:panelGrid columns="2" style="margin-top:30px;margin-left: 20px">
@@ -118,8 +136,26 @@
 										<h:outputText value="#{label.email}:" />
 										<h:inputText styleClass="form-control" />
 
-
 									</h:panelGrid>
+
+
+									<div class="panel-footer" style="margin-top: 40px">
+										<center>
+
+											<h:commandLink styleClass="btn btn-outline btn-primary"
+												style="width:30%;margin-top:40px">
+												<i class="fa fa-arrow-left "></i>
+												<h:outputLabel value="Anterior" />
+
+											</h:commandLink>
+
+											<h:commandLink styleClass="btn btn-outline btn-primary"
+												style="width:30%;margin-top:40px;margin-left:10px">
+												<h:outputLabel value="Próximo" />
+												<i class="fa fa-arrow-right"></i>
+											</h:commandLink>
+										</center>
+									</div>
 								</div>
 								<div class="tab-pane fade" id="messages-pills">
 									<h:panelGrid columns="2" style="margin-top:30px;margin-left: 20px">
@@ -158,6 +194,24 @@
 											styleClass="form-control" />
 
 									</h:panelGrid>
+									
+									<div class="panel-footer" style="margin-top: 40px">
+										<center>
+
+											<h:commandLink styleClass="btn btn-outline btn-primary"
+												style="width:30%;margin-top:40px">
+												<i class="fa fa-arrow-left "></i>
+												<h:outputLabel value="Anterior" />
+
+											</h:commandLink>
+
+											<h:commandLink styleClass="btn btn-outline btn-primary"
+												style="width:30%;margin-top:40px;margin-left:10px">
+												<h:outputLabel value="Próximo" />
+												<i class="fa fa-arrow-right"></i>
+											</h:commandLink>
+										</center>
+									</div>
 								</div>
 
 							</div>
@@ -166,21 +220,6 @@
 
 				</div>
 
-				<div class="panel-footer">
-					<center>
-
-						<h:commandButton styleClass="btn btn-outline btn-primary btn-sm"
-							value="#{label.limpar}" />
-						<h:commandButton styleClass="btn btn-outline btn-primary btn-sm"
-							value="#{label.salvar}" style="margin-left: 15px"
-							action="#{manterUsuarioManagedBean.consultar()}" />
-
-
-
-
-					</center>
-
-				</div>
 			</div>
 		</div>
 
