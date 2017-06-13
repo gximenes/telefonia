@@ -15,7 +15,7 @@
 		</div>
 
 		<div class="col-lg-4" style="width: 100%">
-			<div class="panel panel-primary">
+			<div class="panel panel-info">
 				<div class="panel-heading">
 					<i class="fa fa-user" />
 					<h:outputText value="#{label.incluirUsuario}"
@@ -25,132 +25,144 @@
 				<div class="panel-body">
 
 
-					<p:tabView>
-						<p:tab title="#{label.informacoesBasicas}">
-							<table style="width: 100%; margin-left: 20px">
-								<tr valign="top">
-									<td valign="top"><h:graphicImage
-											library="bootstrap/images" name="user.png" width="100"
-											height="100" /> <h:commandLink
-											title="#{label.incluirUsuario}" styleClass="btn btn-success">
-											<i class="fa fa-plus-circle " />
-											<h:outputText value="Incluir" style="margin-left:5px" />
-										</h:commandLink></td>
-									<td valign="top"><h:panelGrid columns="2" cellspacing="10"
-											style="margin-left:10%">
-											<h:outputText value="#{label.nome}:" />
-											<h:inputText style="margin-left: 5px"
-												styleClass="form-control" />
+					<div class="panel panel-default">
 
-											<h:outputLabel value=" " />
-											<h:outputLabel value=" " />
+						<div class="panel-body">
+							<ul class="nav nav-pills">
+								<li class="active"><a href="#home-pills" data-toggle="tab"><h:outputText
+											value="#{label.informacoesBasicas}" /></a></li>
+								<li><a href="#profile-pills" data-toggle="tab"><h:outputText
+											value="#{label.contato}" /></a></li>
+								<li><a href="#messages-pills" data-toggle="tab"><h:outputText
+											value="#{label.acesso}" /></a></li>
 
-											<h:outputText value="#{label.perfil}:" />
-											<h:selectOneMenu styleClass="form-control"
-												style="margin-left: 5px">
-												<f:selectItem noSelectionOption="true" itemValue="#{null}"
-													itemLabel="#{label.selecione}" />
-												<f:selectItems var="_item"
-													value="#{produtorDeLista.listaTipoPerfilSelectItem}" />
-											</h:selectOneMenu>
+							</ul>
 
-											<h:outputLabel value=" " />
-											<h:outputLabel value=" " />
+							<div class="tab-content">
+								<div class="tab-pane fade in active" id="home-pills">
+									<table style="width: 60%; margin-left: 20px;margin-top: 30px">
+										<tr valign="top">
+											<td valign="middle"><h:graphicImage
+													library="bootstrap/images" name="user.png" width="100"
+													height="100" /> <h:commandLink
+													title="#{label.incluirUsuario}"
+													styleClass="btn btn-success">
+													<i class="fa fa-plus-circle " />
+													<h:outputText value="Incluir" style="margin-left:5px" />
+												</h:commandLink></td>
+											<td valign="top"><h:panelGrid columns="2"
+													cellspacing="10" style="margin-left:10%">
+													<h:outputText value="#{label.nome}:" />
+													<h:inputText style="margin-left: 5px"
+														styleClass="form-control" />
 
-											<h:outputText value="#{label.status}:" />
-											<h:selectOneMenu styleClass="form-control"
-												style="margin-left: 5px">
-												<f:selectItem noSelectionOption="true" itemValue="#{null}"
-													itemLabel="#{label.selecione}" />
-												<f:selectItems var="_item"
-													value="#{produtorDeLista.listaSituacaoSelectItem}" />
-											</h:selectOneMenu>
+													<h:outputLabel value=" " />
+													<h:outputLabel value=" " />
 
-											<h:outputLabel value=" " />
-											<h:outputLabel value=" " />
+													<h:outputText value="#{label.perfil}:" />
+													<h:selectOneMenu styleClass="form-control"
+														style="margin-left: 5px">
+														<f:selectItem noSelectionOption="true" itemValue="#{null}"
+															itemLabel="#{label.selecione}" />
+														<f:selectItems var="_item"
+															value="#{produtorDeLista.listaTipoPerfilSelectItem}" />
+													</h:selectOneMenu>
 
-											<h:outputText value="#{label.tipoPessoa}:" />
-											<h:selectOneMenu styleClass="form-control"
-												style="margin-left: 5px">
-												<f:selectItem noSelectionOption="true" itemValue="#{null}"
-													itemLabel="#{label.selecione}" />
-												<f:selectItems var="_item"
-													value="#{produtorDeLista.listaTipoPessoaSelectItem}" />
-											</h:selectOneMenu>
+													<h:outputLabel value=" " />
+													<h:outputLabel value=" " />
 
-											<h:outputLabel value=" " />
-											<h:outputLabel value=" " />
-										</h:panelGrid></td>
-								</tr>
-							</table>
-						</p:tab>
-						<p:tab title="#{label.contato}">
-							<h:panelGrid columns="2">
-								<f:facet name="header">
-									<center>
-										<h:outputLabel value="#{label.contato}" />
-									</center>
-								</f:facet>
+													<h:outputText value="#{label.status}:" />
+													<h:selectOneMenu styleClass="form-control"
+														style="margin-left: 5px">
+														<f:selectItem noSelectionOption="true" itemValue="#{null}"
+															itemLabel="#{label.selecione}" />
+														<f:selectItems var="_item"
+															value="#{produtorDeLista.listaSituacaoSelectItem}" />
+													</h:selectOneMenu>
 
-								<h:outputText value="#{label.ddd}:" />
-								<h:inputText size="2" maxlength="2" styleClass="form-control" />
+													<h:outputLabel value=" " />
+													<h:outputLabel value=" " />
 
-								<h:outputLabel value="" />
-								<h:outputLabel value="" />
+													<h:outputText value="#{label.tipoPessoa}:" />
+													<h:selectOneMenu styleClass="form-control"
+														style="margin-left: 5px">
+														<f:selectItem noSelectionOption="true" itemValue="#{null}"
+															itemLabel="#{label.selecione}" />
+														<f:selectItems var="_item"
+															value="#{produtorDeLista.listaTipoPessoaSelectItem}" />
+													</h:selectOneMenu>
 
-								<h:outputText value="#{label.telefone}:" />
-								<h:inputText styleClass="form-control" />
+													<h:outputLabel value=" " />
+													<h:outputLabel value=" " />
+												</h:panelGrid></td>
+										</tr>
+									</table>
+								</div>
+								<div class="tab-pane fade" id="profile-pills">
+									<h:panelGrid columns="2" style="margin-top:30px;margin-left: 20px">
+										
 
+										<h:outputText value="#{label.ddd}:" />
+										<h:inputText size="2" maxlength="2" styleClass="form-control" />
 
-								<h:outputLabel value="" />
-								<h:outputLabel value="" />
+										<h:outputLabel value="" />
+										<h:outputLabel value="" />
 
-								<h:outputText value="#{label.email}:" />
-								<h:inputText styleClass="form-control" />
-
-
-							</h:panelGrid>
-						</p:tab>
-						<p:tab title="#{label.acesso}">
-							<h:panelGrid columns="2">
-								<f:facet name="header">
-									<center>
-										<h:outputLabel value="#{label.acesso}" />
-									</center>
-								</f:facet>
-								<h:outputText value="#{label.perfil}:" />
-								<h:selectOneMenu styleClass="form-control"
-									style="margin-left: 15px">
-									<f:selectItem noSelectionOption="true" itemValue="#{null}"
-										itemLabel="#{label.selecione}" />
-									<f:selectItems var="_item"
-										value="#{produtorDeLista.listaTipoPerfilSelectItem}" />
-								</h:selectOneMenu>
+										<h:outputText value="#{label.telefone}:" />
+										<h:inputText styleClass="form-control" />
 
 
-								<h:outputLabel value="" />
-								<h:outputLabel value="" />
+										<h:outputLabel value="" />
+										<h:outputLabel value="" />
 
-								<h:outputText value="#{label.login}:" />
-								<h:inputText style="margin-left: 15px" styleClass="form-control" />
-
-
-								<h:outputLabel value="" />
-								<h:outputLabel value="" />
-
-								<h:outputText value="#{label.senha}:" />
-								<h:inputText style="margin-left: 15px" styleClass="form-control" />
+										<h:outputText value="#{label.email}:" />
+										<h:inputText styleClass="form-control" />
 
 
-								<h:outputLabel />
-								<h:outputLabel />
+									</h:panelGrid>
+								</div>
+								<div class="tab-pane fade" id="messages-pills">
+									<h:panelGrid columns="2" style="margin-top:30px;margin-left: 20px">
+										
+										<h:outputText value="#{label.perfil}:" />
+										<h:selectOneMenu styleClass="form-control"
+											style="margin-left: 15px">
+											<f:selectItem noSelectionOption="true" itemValue="#{null}"
+												itemLabel="#{label.selecione}" />
+											<f:selectItems var="_item"
+												value="#{produtorDeLista.listaTipoPerfilSelectItem}" />
+										</h:selectOneMenu>
 
-								<h:outputText value="#{label.confirmaSenha}:" />
-								<h:inputText style="margin-left: 15px" styleClass="form-control" />
 
-							</h:panelGrid>
-						</p:tab>
-					</p:tabView>
+										<h:outputLabel value="" />
+										<h:outputLabel value="" />
+
+										<h:outputText value="#{label.login}:" />
+										<h:inputText style="margin-left: 15px"
+											styleClass="form-control" />
+
+
+										<h:outputLabel value="" />
+										<h:outputLabel value="" />
+
+										<h:outputText value="#{label.senha}:" />
+										<h:inputText style="margin-left: 15px"
+											styleClass="form-control" />
+
+
+										<h:outputLabel />
+										<h:outputLabel />
+
+										<h:outputText value="#{label.confirmaSenha}:" />
+										<h:inputText style="margin-left: 15px"
+											styleClass="form-control" />
+
+									</h:panelGrid>
+								</div>
+
+							</div>
+						</div>
+					</div>
 
 				</div>
 
