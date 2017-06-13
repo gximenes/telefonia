@@ -25,7 +25,7 @@
 				<div class="panel-body">
 
 					<table style="width: 100%">
-						<tr>
+						 <tr>
 							<td valign="top" width="33%"><h:panelGrid columns="2">
 									<f:facet name="header">
 										<center>
@@ -85,10 +85,16 @@
 
 									<h:outputText value="#{label.ddd}:" />
 									<h:inputText size="2" maxlength="2" styleClass="form-control" />
+									
+									<h:outputLabel value="" />
+									<h:outputLabel value="" />
 
 									<h:outputText value="#{label.telefone}:" />
 									<h:inputText styleClass="form-control" />
 
+
+									<h:outputLabel value="" />
+									<h:outputLabel value="" />
 
 									<h:outputText value="#{label.email}:" />
 									<h:inputText styleClass="form-control" />
@@ -112,14 +118,26 @@
 											value="#{produtorDeLista.listaTipoPerfilSelectItem}" />
 									</h:selectOneMenu>
 
+
+									<h:outputLabel value="" />
+									<h:outputLabel value="" />
+
 									<h:outputText value="#{label.login}:" />
 									<h:inputText style="margin-left: 15px"
 										styleClass="form-control" />
+
+
+									<h:outputLabel value="" />
+									<h:outputLabel value="" />
 
 									<h:outputText value="#{label.senha}:" />
 									<h:inputText style="margin-left: 15px"
 										styleClass="form-control" />
 
+
+									<h:outputLabel />
+									<h:outputLabel />
+									
 									<h:outputText value="#{label.confirmaSenha}:" />
 									<h:inputText style="margin-left: 15px"
 										styleClass="form-control" />
@@ -127,7 +145,7 @@
 								</h:panelGrid></td>
 
 						</tr>
-
+						
 					</table>
 
 
