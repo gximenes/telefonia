@@ -51,6 +51,13 @@
 			<artifactId>weld-tomcat-support</artifactId>
 			<version>1.0.1-Final</version>
 		</dependency>
+		
+		<!-- Dependência local para a biblioteca de conversão de áudio -->
+		<dependency>
+		    <groupId>org.br.conversor</groupId>
+		    <artifactId>conversor</artifactId>
+		    <version>1.0.2</version>
+		</dependency>
 
 
 

@@ -3,8 +3,10 @@ package br.com.dgr.enuns;
 public enum ElementoDeNavegacao {
 	
 	MANTER_USUARIO("Manter Usuário", "/paginas/privado/usuario/consultarUsuario.xhtml",null),
-		INCLUIR_USUARIO("Manter Usuário", "/paginas/privado/usuario/incluirUsuario.xhtml", MANTER_USUARIO);
+		INCLUIR_USUARIO("Manter Usuário", "/paginas/privado/usuario/incluirUsuario.xhtml", MANTER_USUARIO),
 	
+	MANTER_PERFIL("Manter Perfil", "/paginas/privado/perfil/consultarPerfil.xhtml",null);
+		
 	private String valor;
 	private String linkNavegacao;
 	private ElementoDeNavegacao dependenciaSuperior;
