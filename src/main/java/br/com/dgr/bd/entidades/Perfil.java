@@ -1,8 +1,18 @@
 package br.com.dgr.bd.entidades;
 
 import java.io.Serializable;
-import java.util.Date;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
+import br.com.dgr.enuns.Situacao;
+import br.com.dgr.enuns.TipoPerfil;
+
+
+@Entity
+@Table(name = "\"TB_PERFIL\"" , schema = "\"TELEFONIA\"")
 public class Perfil implements Serializable {
 
 	/**
@@ -10,54 +20,24 @@ public class Perfil implements Serializable {
 	 */
 	private static final long serialVersionUID = 1L;
 
+	@Id
+	@Column(name = "\"ID_PERFIL\"" )
 	private Long id;
-
-	private String  nomeDescricao;
-
-	private String status;
 	
-	private String tipoPessoa;
 
-	private Date dataCriacao;
-
-	private String perfil;
+	@Column(name = "\"TP_PERFIL\"" )
+	private Character tipoPerfil;
 
 
+	@Column(name = "\"ST_SITUACAO\"" )
+	private Character situacao;
+
+
+	public Perfil(Long idPerfil) {
+		this.setId(idPerfil);
+	}
+	
 	public Perfil() {
-		// TODO Auto-generated constructor stub
-	}
-
-
-	public String getNomeDescricao() {
-		return nomeDescricao;
-	}
-
-	public void setNomeDescricao(String nomeDescricao) {
-		this.nomeDescricao = nomeDescricao;
-	}
-
-	public String getStatus() {
-		return status;
-	}
-
-	public void setStatus(String status) {
-		this.status = status;
-	}
-
-	public Date getDataCriacao() {
-		return dataCriacao;
-	}
-
-	public void setDataCriacao(Date dataCriacao) {
-		this.dataCriacao = dataCriacao;
-	}
-
-	public String getPerfil() {
-		return perfil;
-	}
-
-	public void setPerfil(String perfil) {
-		this.perfil = perfil;
 	}
 
 
@@ -65,19 +45,32 @@ public class Perfil implements Serializable {
 		return id;
 	}
 
-
 	public void setId(Long id) {
 		this.id = id;
 	}
 
-	
-	public String getTipoPessoa() {
-		return tipoPessoa;
+	public Character getSituacao() {
+		return situacao;
 	}
 
+	public void setSituacao(Character situacao) {
+		this.situacao = situacao;
+	}
 
-	public void setTipoPessoa(String tipoPessoa) {
-		this.tipoPessoa = tipoPessoa;
+	public Character getTipoPerfil() {
+		return tipoPerfil;
+	}
+
+	public void setTipoPerfil(Character tipoPerfil) {
+		this.tipoPerfil = tipoPerfil;
+	}
+	
+	public String getDescricaoSituacao(){
+		return Situacao.getSituacao(this.getSituacao()).getDescricao();
+	}
+
+	public String getDescricaoPerfil(){
+		return TipoPerfil.getPerfil(this.getTipoPerfil()).getDescricao();
 	}
 
 
@@ -85,14 +78,11 @@ public class Perfil implements Serializable {
 	public int hashCode() {
 		final int prime = 31;
 		int result = 1;
-		result = prime * result + ((dataCriacao == null) ? 0 : dataCriacao.hashCode());
 		result = prime * result + ((id == null) ? 0 : id.hashCode());
-		result = prime * result + ((nomeDescricao == null) ? 0 : nomeDescricao.hashCode());
-		result = prime * result + ((perfil == null) ? 0 : perfil.hashCode());
-		result = prime * result + ((status == null) ? 0 : status.hashCode());
+		result = prime * result + ((situacao == null) ? 0 : situacao.hashCode());
+		result = prime * result + ((tipoPerfil == null) ? 0 : tipoPerfil.hashCode());
 		return result;
 	}
-
 
 	@Override
 	public boolean equals(Object obj) {
@@ -103,37 +93,22 @@ public class Perfil implements Serializable {
 		if (getClass() != obj.getClass())
 			return false;
 		Perfil other = (Perfil) obj;
-		if (dataCriacao == null) {
-			if (other.dataCriacao != null)
-				return false;
-		} else if (!dataCriacao.equals(other.dataCriacao))
-			return false;
 		if (id == null) {
 			if (other.id != null)
 				return false;
 		} else if (!id.equals(other.id))
 			return false;
-		if (nomeDescricao == null) {
-			if (other.nomeDescricao != null)
+		if (situacao == null) {
+			if (other.situacao != null)
 				return false;
-		} else if (!nomeDescricao.equals(other.nomeDescricao))
+		} else if (!situacao.equals(other.situacao))
 			return false;
-		if (perfil == null) {
-			if (other.perfil != null)
+		if (tipoPerfil == null) {
+			if (other.tipoPerfil != null)
 				return false;
-		} else if (!perfil.equals(other.perfil))
-			return false;
-		if (status == null) {
-			if (other.status != null)
-				return false;
-		} else if (!status.equals(other.status))
+		} else if (!tipoPerfil.equals(other.tipoPerfil))
 			return false;
 		return true;
 	}
-
-
-
-
-
 
 }

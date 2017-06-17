@@ -28,42 +28,66 @@
 							<div class="panel panel-default">
 
 								<div class="panel-body">
-								
-									<h:outputLabel  value="Nenhum Perfil cadastrado" rendered="#{manterPerfilManagedBean.perfis eq null or manterPerfilManagedBean.perfis.isEmpty()}"/>	
-									<h:dataTable rendered="#{manterPerfilManagedBean.perfis ne null and !manterPerfilManagedBean.perfis.isEmpty()}"
+
+									<h:outputLabel value="Nenhum Perfil cadastrado"
+										rendered="#{manterPerfilManagedBean.perfis eq null or manterPerfilManagedBean.perfis.isEmpty()}" />
+
+									<h:dataTable
+										rendered="#{manterPerfilManagedBean.perfis ne null and !manterPerfilManagedBean.perfis.isEmpty()}"
 										styleClass="table table-striped table-bordered table-hover"
-										columnClasses="center" rowClasses="odd gradeX,even gradeC" 
-										value="#{manterUsuarioManagedBean.usuariosPesquisados}"
-										var="_usuario">
-
+										rowClasses="odd gradeX,even gradeC"
+										value="#{manterPerfilManagedBean.perfis}" var="_perfil">
 										<h:column>
-											<f:facet name="header">
-												<h:outputText value="#{label.perfil}" />
-											</f:facet>
-											<h:outputLabel value="#{_usuario.nomeDescricao}" />
+											<center>
+												<f:facet name="header">
+													<center>
+														<h:outputText value="#{label.perfil}" />
+													</center>
+												</f:facet>
+												<h:outputLabel value="#{_perfil.descricaoPerfil}" />
+											</center>
 										</h:column>
 
 										<h:column>
-											<f:facet name="header">
-												<h:outputText value="#{label.status}" />
-											</f:facet>
-											<h:outputLabel value="#{_usuario.perfil}" />
+											<center>
+												<f:facet name="header">
+													<center>
+														<h:outputText value="#{label.status}" />
+													</center>
+												</f:facet>
+												<h:outputLabel value="#{_perfil.descricaoSituacao}" />
+											</center>
 										</h:column>
 
 										<h:column>
-											<f:facet name="header">
-												<h:outputText value="#{label.acao}" />
-											</f:facet>
+											<center>
+												<f:facet name="header">
+													<center>
+														<h:outputText value="#{label.acao}" />
+													</center>
+												</f:facet>
 
-											<h:commandLink id="idExcluir"
-												styleClass=" btn btn-warning btn-circle"
-												style="margin-left:5%" title="Desativar Perfil">
-												<i class="fa fa-trash-o  "></i>
-											</h:commandLink>
+												<h:commandLink id="idExcluir" styleClass=" btn btn-warning"
+													rendered="#{manterPerfilManagedBean.isPerfilAtivo(_perfil.situacao)}"
+													value="Desativar Perfil" style="margin-left:5%"
+													action="#{manterPerfilManagedBean.alterarPerfil(_perfil)}"
+													title="Desativar Perfil">
+													<i class="fa fa-trash-o  "></i>
+												</h:commandLink>
 
+
+												<h:commandLink id="idReativar"
+													rendered="#{!manterPerfilManagedBean.isPerfilAtivo(_perfil.situacao)}"
+													action="#{manterPerfilManagedBean.alterarPerfil(_perfil)}"
+													styleClass="btn btn-info" value="Ativar Perfil"
+													style="margin-left:5%" title="Ativar Perfil">
+													<i class="fa fa-refresh"></i>
+												</h:commandLink>
+
+
+											</center>
 										</h:column>
 									</h:dataTable>
-
 								</div>
 							</div>
 						</div>
@@ -72,8 +96,6 @@
 				<div class="panel-footer"></div>
 			</div>
 		</div>
-
-
 	</ui:define>
 
 </ui:decorate>

@@ -2,23 +2,32 @@ package br.com.dgr.enuns;
 
 public enum Situacao {
 	
-	ATIVO("A", "Ativo"),
-	INATIVO("I", "Inativo");
+	ATIVO('A', "Ativo"),
+	INATIVO('I', "Inativo");
 		
-	private String valor;
+	private Character valor;
 	private String descricao;
 
-	private Situacao(String vl, String desc) {
+	private Situacao(Character vl, String desc) {
 		this.valor = vl;
 		this.descricao = desc;
 	}
 
-	public String getValor() {
+	public Character getValor() {
 		return valor;
 	}
 
 	public String getDescricao() {
 		return descricao;
+	}
+	
+	public static Situacao getSituacao(Character valor){
+		for(Situacao st : Situacao.values()){
+			if(st.getValor().equals(valor)){
+				return st;
+			}
+		}
+		return null;
 	}
 	
 }

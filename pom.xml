@@ -51,12 +51,32 @@
 			<artifactId>weld-tomcat-support</artifactId>
 			<version>1.0.1-Final</version>
 		</dependency>
-		
+
 		<!-- Dependência local para a biblioteca de conversão de áudio -->
 		<dependency>
-		    <groupId>org.br.conversor</groupId>
-		    <artifactId>conversor</artifactId>
-		    <version>1.0.2</version>
+			<groupId>org.br.conversor</groupId>
+			<artifactId>conversor</artifactId>
+			<version>1.0.2</version>
+		</dependency>
+
+		<dependency>
+			<groupId>org.hibernate</groupId>
+			<artifactId>hibernate-entitymanager</artifactId>
+			<version>4.3.0.Final</version>
+		</dependency>
+
+
+		<dependency>
+			<groupId>commons-digester</groupId>
+			<artifactId>commons-digester</artifactId>
+			<version>2.1</version>
+		</dependency>
+
+		<!-- https://mvnrepository.com/artifact/org.postgresql/postgresql -->
+		<dependency>
+			<groupId>org.postgresql</groupId>
+			<artifactId>postgresql</artifactId>
+			<version>9.4-1206-jdbc42</version>
 		</dependency>
 
 

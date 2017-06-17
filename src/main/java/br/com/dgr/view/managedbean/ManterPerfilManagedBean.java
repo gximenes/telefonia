@@ -1,11 +1,11 @@
 package br.com.dgr.view.managedbean;
 
-import java.util.ArrayList;
 import java.util.List;
 
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.SessionScoped;
 
+import br.com.dgr.bd.acesso.implementacoes.PerfilImpDAO;
 import br.com.dgr.bd.entidades.Perfil;
 import br.com.dgr.enuns.ElementoDeNavegacao;
 
@@ -16,12 +16,40 @@ public class ManterPerfilManagedBean {
 	private List<Perfil> perfis;
 	private Perfil perfil;
 	
+	//@Inject
+	//private PerfilImpDAO perfilDAO;
+	
 	
 	public String getInit(){
-		setPerfil(new Perfil());
-		setPerfis(new ArrayList<Perfil>());
+		PerfilImpDAO perfilDAO = new PerfilImpDAO();
+		try{
+			setPerfil(new Perfil());
+			setPerfis(perfilDAO.retornaTodosPerfis());
+		}catch (Exception e) {
+			e.printStackTrace();
+		}
 		
 		return ElementoDeNavegacao.MANTER_PERFIL.getLinkNavegacao();
+	}
+	
+	public String alterarPerfil(Perfil perfil){
+		try {
+			PerfilImpDAO perfilDAO = new PerfilImpDAO();
+			perfil.setSituacao(perfil.getSituacao() == 'A' ? 'I' : 'A');
+			perfilDAO.alterarPerfil(perfil);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		
+		return getInit();
+	}
+	
+	public boolean isPerfilAtivo(char valor){
+		if(valor == 'A'){
+			return true;
+		}else{
+			return false;
+		}
 	}
 
 
