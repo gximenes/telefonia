@@ -13,22 +13,31 @@
 			</div>
 			<div class="panel-body" style="width: 100%;">
 				<h:form>
-					<p:fileUpload style="width: 50%;" mode="advanced"
+					<p:fileUpload style="width: 50%;" mode="advanced" value="converterAudioManagedBean.uploadFile"
 						dragDropSupport="false" update="messages" sizeLimit="100000"
 						fileLimit="3" allowTypes="/(\.|\/)(wav|mp4|mp3)$/" />
 					<p:growl id="messages" showDetail="true" />
 					<br/>
 					<div class="dropdown">
 						<h:selectOneMenu styleClass="form-control btn btn-info dropdown-toggle"
-							style="margin-left: 5px">
+							style="margin-left: 5px" value="#{converterAudioManagedBean.tipoAudioOrigem}">
 							<f:selectItem noSelectionOption="true" itemValue="#{null}"
 								itemLabel="#{label.selecione}" />
-							<!-- <f:selectItems var="_item"
-								value="#{produtorDeLista.listaTipoPerfilSelectItem}" /> -->
+							<f:selectItems var="_item"
+								value="#{produtorDeLista.listaTipoAudioSelectItem}" />
+						</h:selectOneMenu>
+						<h:selectOneMenu styleClass="form-control btn btn-info dropdown-toggle"
+							style="margin-left: 5px" value="#{converterAudioManagedBean.tipoAudioConvertido}">
+							<f:selectItem noSelectionOption="true" itemValue="#{null}"
+								itemLabel="#{label.selecione}" />
+							<f:selectItems var="_item"
+								value="#{produtorDeLista.listaTipoAudioSelectItem}" />
 						</h:selectOneMenu>
 					</div>
 					<br/>
-					<p:commandButton value="Converter" id="ajax"  />
+					<h:commandButton styleClass="btn btn-outline btn-primary btn-sm"
+								value="#{botao.converterAudio}"
+								action="#{converterAudioManagedBean.converterAudio()}" />
 					
 					<!-- <button type="button" class="btn btn-info">Converter</button> -->
 

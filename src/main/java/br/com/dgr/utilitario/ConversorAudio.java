@@ -17,9 +17,8 @@ public class ConversorAudio {
 	 * -Dversion=1.0.2 -Dpackaging=jar -DgeneratePom=true
 	 */
 	
-	public void converteAudio(String caminhoAudioOrigem, String caminhoAudioConvertido, 
+	public static void converteAudio(File source, String caminhoAudioConvertido, 
 			String tipoAudioOrigem, String tipoAudioConvertido){
-		File source = new File(caminhoAudioOrigem+"."+tipoAudioOrigem);
 		File target = new File(caminhoAudioConvertido+"."+tipoAudioConvertido);
 		AudioAttributes audio = new AudioAttributes();
 		audio.setCodec("libmp3lame");
