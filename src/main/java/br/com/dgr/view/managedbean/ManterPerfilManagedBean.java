@@ -2,8 +2,10 @@ package br.com.dgr.view.managedbean;
 
 import java.util.List;
 
+import javax.faces.application.FacesMessage;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.SessionScoped;
+import javax.faces.context.FacesContext;
 
 import br.com.dgr.bd.acesso.implementacoes.PerfilImpDAO;
 import br.com.dgr.bd.entidades.Perfil;
@@ -37,6 +39,8 @@ public class ManterPerfilManagedBean {
 			PerfilImpDAO perfilDAO = new PerfilImpDAO();
 			perfil.setSituacao(perfil.getSituacao() == 'A' ? 'I' : 'A');
 			perfilDAO.alterarPerfil(perfil);
+			FacesContext.getCurrentInstance().addMessage
+			 (null, new FacesMessage(FacesMessage.SEVERITY_INFO, "Perfil alterado com sucesso.", ""));
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
